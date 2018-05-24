@@ -1,10 +1,12 @@
 module Model exposing (..)
 
-type alias Model =  { folders : List Folder
+type alias Model =
+  { folders : List Folder
   , tags    : List Tag
   , notes   : List Note
   , book    : List Article
   , search  : Search
+  , config  : Config
   }
 
 -- main elements
@@ -35,6 +37,16 @@ type alias Search =
   , re_tag      : Regex
   , re_note     : Regex
   , re_book     : Regex
+  }
+
+type alias Config =
+  { locations : List Location
+  }
+
+type alias Location =
+  { name    : String
+  , backend : String
+  , fs_path : Path
   }
 
 -- basic elements

@@ -1,13 +1,8 @@
 module View exposing (main_grid)
-
--- import Html exposing (..)
-
-
+-- packages:
 import Element exposing (..)
 import Element.Attributes exposing (..)
-import Html
-
-
+-- src:
 import View.Style exposing (..)
 
 

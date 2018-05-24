@@ -2,7 +2,7 @@ module Init  exposing (dummy)
 import Model exposing (..)
 
 dummy =
-  (Model f t n b s, Cmd.none)
+  (Model f t n b s c, Cmd.none)
 
 
 f = [ Folder "F1" "P1"
@@ -26,3 +26,20 @@ b = [ Article "A1" "D1"
     ]
 
 s = Search "REF" "RET" "REN" "REB"
+
+c = Config
+    [ Location "N1" "B1" "P1"
+    , Location "N2" "B2" "P2"
+    , Location "N3" "B3" "P3"
+    ]
+
+
+type alias Config =
+  { locations : List Location
+  }
+
+type alias Location =
+  { name    : String
+  , backend : String
+  , fs_path : Path
+  }
