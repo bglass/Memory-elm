@@ -1,27 +1,13 @@
-import Html exposing (program)
-
-import Model  exposing (..)
+import Html
 import Update exposing (..)
-import View   exposing (..)
+import View
+import Init
+import Subscriptions
 -- import Flags  exposing (..)
 
-main = program
-  { init = init
-  , update = update
-  , view = view
-  , subscriptions = subscriptions
+main = Html.program
+  { init          = Init.dummy
+  , update        = update
+  , view          = View.grid
+  , subscriptions = Subscriptions.none
   }
-
--- INIT
-
--- init : (Model, Cmd)
-init =
-  (Model "es geht los", Cmd.none)
-
-
--- SUBSCRIPTIONS
-
-
--- subscriptions : Model -> Sub
-subscriptions model =
-  Sub.none
