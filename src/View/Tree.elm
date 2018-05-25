@@ -1,6 +1,5 @@
 module View.Tree exposing (view)
 -- packages:
-import Html
 import Element exposing (..)
 import Element.Attributes exposing (..)
 -- src:
