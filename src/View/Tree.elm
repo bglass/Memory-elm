@@ -1,17 +1,23 @@
-module View.Tree exposing (frame)
+module View.Tree exposing (view)
+-- packages:
+import Html
+import Element exposing (..)
+import Element.Attributes exposing (..)
+-- src:
 
-import Html exposing (..)
-import Html.Attributes exposing (..)
+-- import Treeview as T
+-- import Data.TreeDummy1 exposing (styles, tree_dummy_1)
 
-import Treeview as T
-import Data.TreeDummy1 exposing (styles, tree_dummy_1)
-
-import Model  exposing (..)
-
-config : T.Config
-config = T.default styles
+-- import Model  exposing (..)
+import View.Style exposing (..)
+import Model exposing (..)
 
 
-frame =
-  div []
-    [ T.view config tree_dummy_1]
+
+view records =
+  column None []
+    ( List.map text (names records)
+    )
+
+names records =
+  List.map .name records

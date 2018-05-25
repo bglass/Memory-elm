@@ -1,9 +1,10 @@
-module Init  exposing (dummy)
+module Init  exposing (dummy, mdl)
 import Model exposing (..)
 
 dummy =
-  (Model f t n b s c, Cmd.none)
+  (mdl, Cmd.none)
 
+mdl = Model f t n b s c
 
 f = [ Folder "F1" "P1"
     , Folder "F2" "P2"
