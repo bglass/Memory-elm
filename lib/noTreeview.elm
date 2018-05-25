@@ -257,11 +257,11 @@ setNodeVisible val (Node a b c d) =
 --   - `Search String`: filter search
 --   - `ToggleCheck Multiple Cascade Key Value`: check/uncheck a node checkbox.
 -- -}
--- type Msg
---   = Toggle Key
---   | Select Key
---   | Search String
---   | ToggleCheck Bool Bool Key Bool   -- Multiple Cascade Key Value
+type Msg
+  = Toggle Key
+  | Select Key
+  | Search String
+  | ToggleCheck Bool Bool Key Bool   -- Multiple Cascade Key Value
 
 
 {-| The treeview update function. -}

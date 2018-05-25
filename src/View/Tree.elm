@@ -1,22 +1,32 @@
 module View.Tree exposing (view)
--- packages:
+
+import Html
 import Element exposing (..)
-import Element.Attributes exposing (..)
--- src:
+import Treeview as T
 
--- import Treeview as T
--- import Data.TreeDummy1 exposing (styles, tree_dummy_1)
-
--- import Model  exposing (..)
 import View.Style exposing (..)
 import Model exposing (..)
+import Update exposing (..)
 
+import Data.TreeDummy1 as D
 
 
 view records =
-  column None []
-    ( List.map text (names records)
-    )
+  html (treeview (nodes records) )
+
+treeview data =
+  Html.div []
+    [ Html.map TMsg (T.view config data)
+    ]
+
+config : T.Config
+config = T.default D.styles
 
 names records =
   List.map .name records
+
+nodes records =
+  List.map node records
+
+node record =
+  T.node record.name record.name "folder" True Nothing

@@ -1,7 +1,10 @@
 module Update exposing (..)
 import Model  exposing (..)
+import Treeview as T
 
-type Msg = NoOp
+type Msg
+  = NoOp
+  | TMsg T.Msg
 
 -- type Msg
 --   = Change String
@@ -14,6 +17,6 @@ type Msg = NoOp
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
-  case msg of
-    NoOp ->
+  -- case msg of
+  --   NoOp ->
       ( model, Cmd.none )
